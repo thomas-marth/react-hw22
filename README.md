@@ -1,12 +1,51 @@
-# React + Vite
+# Random Quote Generator - React HW 22
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple React application bootstrapped with [Vite](https://vitejs.dev/). It fetches random quotes from the [ZenQuotes API](https://zenquotes.io/) and lets you request a new one with a single click. State is managed using Redux Toolkit and asynchronous requests are handled by Axios.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetches a random quote and its author from a public API.
+- Uses Redux Toolkit for state management.
+- Styled with CSS Modules.
+- Built with Vite for fast development and HMR.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) and npm installed.
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running the app
+
+```bash
+npm run dev
+```
+
+The application will be available at <http://localhost:5173> (or the port Vite chooses).
+
+### Other scripts
+
+- `npm run build` – bundle the app for production.
+- `npm run lint` – run ESLint over the project files.
+- `npm run preview` – locally preview the production build.
+
+## Project Structure
+
+```
+src/
+  components/
+    quote/          # Quote component and styles
+  redux/
+    slices/         # Redux slice for quote state
+    store.js        # Redux store configuration
+```
+
+## API
+
+Quotes are retrieved from [https://zenquotes.io/api/random](https://zenquotes.io/api/random). API key is required.
