@@ -48,4 +48,10 @@ src/
 
 ## API
 
-Quotes are retrieved from [https://zenquotes.io/api/random](https://zenquotes.io/api/random). API key is required.
+Quotes are retrieved from the public DummyJSON endpoint:
+
+```
+GET https://dummyjson.com/quotes/random
+```
+
+The response is a JSON object with `quote` (text) and `author` fields. The app maps these fields directly into the Redux store. No API key is required.

@@ -4,9 +4,9 @@ import axios from "axios";
 export const fetchRandomQuote = createAsyncThunk(
   "quote/fetchRandomQuote",
   async () => {
-    const response = await axios.get("https://zenquotes.io/api/random");
-    const { q, a } = response.data[0];
-    return { quote: q, author: a };
+    const response = await axios.get("https://dummyjson.com/quotes/random");
+    const { quote, author } = response.data;
+    return { quote, author };
   }
 );
 
