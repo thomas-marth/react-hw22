@@ -5,7 +5,8 @@ export const fetchRandomQuote = createAsyncThunk(
   "quote/fetchRandomQuote",
   async () => {
     const response = await axios.get("https://zenquotes.io/api/random");
-    return response.data;
+    const { q, a } = response.data[0];
+    return { quote: q, author: a };
   }
 );
 
@@ -25,7 +26,7 @@ const quoteSlice = createSlice({
       })
       .addCase(fetchRandomQuote.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.quote = action.payload.content;
+        state.quote = action.payload.quote;
         state.author = action.payload.author;
       })
       .addCase(fetchRandomQuote.rejected, (state, action) => {
