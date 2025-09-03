@@ -17,7 +17,11 @@ const Quote = () => {
 
   return (
     <div className={styles.quoteContainer}>
-      {status === "loading" && <p>Loading...</p>}
+      {status === "loading" && (
+        <div className={styles.loading}>
+          <p>Loading...</p>
+        </div>
+      )}
       {status === "succeeded" && (
         <div className={styles.quote}>
           <p>"{quote}"</p>
